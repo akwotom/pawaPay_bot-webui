@@ -22,14 +22,9 @@ export async function appInit() {
         if (telegramData.length > 2) {
 
             window.location = "/fund";
-            await router.push({
-                path: '/fund?iii=33'
-            });
+
         } else {
             window.location = "/liquidate";
-            router.push({
-                path: '/liquidate?ddd=ke'
-            })
         }
     }
 
