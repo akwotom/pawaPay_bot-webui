@@ -116,6 +116,7 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
                     if (phone.length != 12) {
                         throw new Error(`Your phone number is improper.`)
                     }
+                    data.payment_method_account_id = phone;
                     const response = await execFxn(data)
                     console.log(`Just got this response `, response)
                     data.cheque_id = data.cheque_id || response.id
