@@ -10,7 +10,7 @@ import router from "./router";
 import { getTelegramParams } from "./telegram.mjs";
 
 
-export function appInit() {
+export async function appInit() {
     console.log(`I exist`)
 
     let telegramData = getTelegramParams()
@@ -20,7 +20,7 @@ export function appInit() {
     if (telegramData) {
 
         if (telegramData.length > 2) {
-            router.push({
+            await router.push({
                 path: '/fund?iii=33'
             });
         } else {
