@@ -17,6 +17,8 @@ export async function appInit() {
 
     console.log(`This is the telegram data `, telegramData)
 
+    window.Telegram?.WebApp?.read()
+
     if (telegramData) {
 
         if (telegramData.length > 2) {
