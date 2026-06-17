@@ -36,6 +36,7 @@ onUnmounted(() => {
     clearInterval(longInterval)
     shortInterval = undefined;
     longInterval = undefined;
+    console.log(`Now clearing all those intervals.`)
 })
 
 onMounted(() => props.state.pollCheque())
