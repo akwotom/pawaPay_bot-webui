@@ -12,7 +12,7 @@ import PwButton from '../PwButton.vue';
 import TickSvg from './icons/tick.svg.vue';
 
 function close() {
-    Telegram?.WebApp?.close();
+    window.Telegram?.WebApp?.close();
 }
 
 </script>
