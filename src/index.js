@@ -28,8 +28,7 @@ export async function appInit() {
                 inline_message_id
             ] = telegramData;
             console.log(`Will be redirecting shortly..`)
-            setTimeout(() =>
-                window.location = `/fund?amount.value=${amount_value}&amount.currency_code=${amount_currency_code}&inline_message_id=${inline_message_id}`, 10_000)
+            window.location = `/fund?amount.value=${amount_value}&amount.currency_code=${amount_currency_code}&inline_message_id=${inline_message_id}`
         } else {
             window.location = `/liquidate?cheque_id=${telegramData[0]}`;
         }
