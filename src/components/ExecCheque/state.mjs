@@ -106,6 +106,8 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
 
             const execCheque = async () => {
                 try {
+                    data.isExecuting = true;
+
                     let phone = data.payment_method_account_id
 
                     if (phone.startsWith('+')) phone = phone.slice(1);
@@ -130,6 +132,7 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
                             data.error = undefined;
                         },
                     }
+                    data.isExecuting = false;
                     console.log(`An error `, e)
                 }
             }

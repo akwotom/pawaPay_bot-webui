@@ -9,6 +9,7 @@
 <script setup>
 import Frame from '../Frame.vue';
 import PwButton from '../PwButton.vue';
+import LoadingSvg from './icons/loading.svg.vue';
 import InputPaymentMethod from './InputPaymentMethod.vue';
 import PaymentPolling from './PaymentPolling.vue';
 import PaymentSuccess from './PaymentSuccess.vue';
@@ -68,6 +69,8 @@ const state = createHandlePaymentState({ execFxn: execCheque, isComplete, urlPar
                 <div class="action">
                     <PwButton @click="state.execCheque()">
                         <slot name="action-button" />
+                        <LoadingSvg v-if="state.data.isExecuting"
+                            style="width:2em; height: 1.5em; --main-purple: white; margin-left: 1em;" />
                     </PwButton>
                 </div>
 
