@@ -25,13 +25,20 @@ function getInitialValues(urlParamKeys) {
 
     let params = new URL(window.location.href).searchParams;
 
+
+    let telegramData = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
+
+    if (telegramData) {
+        telegramData = telegramData.split('_')
+    }
+
     /**
      * 
      * @param {string} key 
      */
-    function getValue(key,) {
+    function getValue(key, index) {
 
-        const value = params.get(key)
+        const value = telegramData ? telegramData[index] : params.get(key)
 
         if (!value) {
             console.log(`${key} was not found in url query params `)
@@ -44,7 +51,9 @@ function getInitialValues(urlParamKeys) {
     let values = {}
 
 
-    for (const key of urlParamKeys) {
+    for (let i = 0; i < urlParamKeys.length; i++) {
+
+        const key = urlParamKeys[i];
 
         console.log(`Looping at key `, key)
 
@@ -57,7 +66,7 @@ function getInitialValues(urlParamKeys) {
             }
 
             for (let i = 0; i < parts.length; i++) {
-                eval(`values.${key}=getValue('${key}')`)
+                eval(`values.${key}=getValue('${key}', i)`)
             }
         } else {
             values[key] = getValue(key, params)
