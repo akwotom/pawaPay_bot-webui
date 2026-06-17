@@ -26,19 +26,13 @@ function getInitialValues(urlParamKeys) {
     let params = new URL(window.location.href).searchParams;
 
 
-    let telegramData = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
-
-    if (telegramData) {
-        telegramData = telegramData.split('_')
-    }
-
     /**
      * 
      * @param {string} key 
      */
-    function getValue(key, index) {
+    function getValue(key,) {
 
-        const value = telegramData ? telegramData[index] : params.get(key)
+        const value = params.get(key)
 
         if (!value) {
             console.log(`${key} was not found in url query params `)
@@ -136,7 +130,7 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
                         },
                     }
                     console.log(`An error `, e)
-                }finally {
+                } finally {
                     data.isExecuting = false;
                 }
             }

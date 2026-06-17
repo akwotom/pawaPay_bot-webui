@@ -8,5 +8,5 @@
 
 
 export function getTelegramParams() {
-    return new URLSearchParams(window.location.search).get('tgWebAppStartParam')?.split('_')
+    return new URLSearchParams(window.location.search).get('tgWebAppStartParam')?.split('___')
 }
