@@ -15,6 +15,8 @@ export function appInit() {
 
     let telegramData = getTelegramParams()
 
+    console.log(`This is the telegram data `, telegramData)
+
     if (telegramData) {
 
         if (telegramData.length > 2) {
