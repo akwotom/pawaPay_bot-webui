@@ -28,5 +28,10 @@
     min-width: clamp(50px, 500px, 100vw - 15em);
     min-height: clamp(50px, 500px, 100vw - 3em);
     max-width: clamp(500px, 500px, 100vw - 8em);
+    position: relative;
+}
+
+.frame>* {
+    max-width: calc(100vw - 6em);
 }
 </style>
