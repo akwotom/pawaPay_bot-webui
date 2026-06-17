@@ -107,7 +107,7 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
             const execCheque = async () => {
 
                 if (data.isExecuting) return;
-                
+
                 try {
                     data.isExecuting = true;
 
@@ -135,8 +135,9 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
                             data.error = undefined;
                         },
                     }
-                    data.isExecuting = false;
                     console.log(`An error `, e)
+                }finally {
+                    data.isExecuting = false;
                 }
             }
 
