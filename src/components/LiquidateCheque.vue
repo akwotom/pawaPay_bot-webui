@@ -44,7 +44,7 @@ async function liquidateCheque(data) {
             Enter your account details and collect the money. Make sure someone else has not already collected the
             funds.
         </template>
-        <template #success>This order has been fully paid for, and now, the recipient can collect the money.</template>
+        <template #success>Thank you. We hope you have received the money.</template>
     </ExecCheque>
 
 </template>
