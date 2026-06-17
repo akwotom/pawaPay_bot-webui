@@ -125,7 +125,10 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
                 } catch (e) {
                     data.error = {
                         msg: `${e}`,
-                        retry: execCheque,
+                        retry: () => {
+                            data.view = "input"
+                            data.error = undefined;
+                        },
                     }
                     console.log(`An error `, e)
                 }
