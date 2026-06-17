@@ -8,13 +8,7 @@
 
 import router from "./router";
 
-console.log = console.error = console.info = (...data) => {
-    for (const item of data) {
-        const div = document.createElement('div')
-        div.innerHTML = `${item}`
-        document.body.appendChild(div)
-    }
-}
+console.log(`I exist`)
 
 let telegramData = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
 
