@@ -9,19 +9,23 @@
 import router from "./router";
 import { getTelegramParams } from "./telegram.mjs";
 
-console.log(`I exist`)
 
-let telegramData = getTelegramParams()
+export function appInit() {
+    console.log(`I exist`)
 
-if (telegramData) {
+    let telegramData = getTelegramParams()
 
-    if (telegramData.length > 2) {
-        router.push({
-            path: '/fund?iii=33'
-        });
-    } else {
-        router.push({
-            path: '/liquidate?ddd=ke'
-        })
+    if (telegramData) {
+
+        if (telegramData.length > 2) {
+            router.push({
+                path: '/fund?iii=33'
+            });
+        } else {
+            router.push({
+                path: '/liquidate?ddd=ke'
+            })
+        }
     }
+
 }
