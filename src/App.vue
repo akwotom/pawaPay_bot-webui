@@ -3,10 +3,7 @@ const url = window.location.href;
 </script>
 
 <template>
-  <div>
-    You are attt: {{ url }}
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
 <style scoped></style>
