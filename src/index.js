@@ -7,13 +7,13 @@
  */
 
 import router from "./router";
+import { getTelegramParams } from "./telegram.mjs";
 
 console.log(`I exist`)
 
-let telegramData = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
+let telegramData = getTelegramParams()
 
 if (telegramData) {
-    telegramData = telegramData.split('_')
 
     if (telegramData.length > 2) {
         router.push({
