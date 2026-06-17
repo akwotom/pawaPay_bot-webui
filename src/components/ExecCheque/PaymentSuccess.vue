@@ -11,6 +11,10 @@
 import PwButton from '../PwButton.vue';
 import TickSvg from './icons/tick.svg.vue';
 
+function close() {
+    Telegram?.WebApp?.close();
+}
+
 </script>
 
 
@@ -20,7 +24,7 @@ import TickSvg from './icons/tick.svg.vue';
         <div>
             <slot />
         </div>
-        <PwButton style="width: 100%">Thank you!</PwButton>
+        <PwButton style="width: 100%" @click="close()">Thank you!</PwButton>
     </div>
 </template>
 
