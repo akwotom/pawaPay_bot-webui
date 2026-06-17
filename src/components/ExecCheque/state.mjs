@@ -84,7 +84,7 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
 
             let data = reactive({
                 view: "input",
-                payment_method_account_id: undefined,
+                payment_method_account_id: "237",
                 cheque_id: undefined,
                 funded: false,
                 ...getInitialValues(urlParamKeys),
@@ -106,6 +106,16 @@ const createHandlePaymentState = function ({ execFxn, isComplete, urlParamKeys, 
 
             const execCheque = async () => {
                 try {
+                    let phone = data.payment_method_account_id
+
+                    if (phone.startsWith('+')) phone = phone.slice(1);
+
+                    if (!phone.startsWith("237")) {
+                        phone = `237${phone}`;
+                    }
+                    if (phone.length != 12) {
+                        throw new Error(`Your phone number is improper.`)
+                    }
                     const response = await execFxn(data)
                     console.log(`Just got this response `, response)
                     data.cheque_id = data.cheque_id || response.id
