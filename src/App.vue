@@ -4,7 +4,7 @@ const url = window.location.href;
 
 <template>
   <div>
-    You are at: {{ url }}
+    You are attt: {{ url }}
     <RouterView />
   </div>
 </template>
