@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+const url = window.location.href;
+</script>
 
 <template>
-  <RouterView />
+  <div>
+    You are at: {{ url }}
+    <RouterView />
+  </div>
 </template>
 
 <style scoped></style>
