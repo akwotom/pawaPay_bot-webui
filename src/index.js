@@ -20,11 +20,15 @@ export async function appInit() {
     if (telegramData) {
 
         if (telegramData.length > 2) {
+            const [
+                amount_value,
+                amount_currency_code,
+                inline_message_id
+            ] = telegramData;
 
-            window.location = "/fund";
-
+            window.location = `/fund?amount.value=${amount_value}&amount.currency_code=${amount_currency_code}&inline_message_id=${inline_message_id}`;
         } else {
-            window.location = "/liquidate";
+            window.location = `/liquidate?cheque_id=${telegramData[0]}`;
         }
     }
 

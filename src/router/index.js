@@ -8,10 +8,10 @@
 
 import LiquidationPage from '@/pages/LiquidationPage.vue'
 import PaymentPage from '@/pages/PaymentPage.vue'
-import { createRouter, createWebHistory, createMemoryHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createMemoryHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/fund',
