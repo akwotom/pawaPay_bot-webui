@@ -39,7 +39,7 @@ async function liquidateCheque(data) {
 
     <ExecCheque :exec-cheque="liquidateCheque" :initial-value="value" :is-complete="v => v.liquidated"
         :url-param-keys="['cheque_id']">
-        <template #action-button>Collect Funds</template>
+        <template #action-button>Withdraw Money</template>
         <template #info>
             Enter your account details and collect the money. Make sure someone else has not already collected the
             funds.
